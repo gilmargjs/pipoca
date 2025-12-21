@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <style>
+            body{
+                background-color: #fff;
+            }
+            .btn-primary{
+                display: flex;
+                background-color: #7837b6; 
+                color: azure;
+                font-size: 15px;
+                border-radius: 5px;
+                margin: 10px;
+                
+            }
+            .btn-primary:hover{
+                color: #7837b6;
+                background-color:azure;
+            }
+            input :hover{
+                background-color: rgb(128, 156, 156);
+                color: rgb(51, 49, 49);
+            }
+        </style>
+        <table>
+            {{ new_pipoca_form.as_table }}
+        </table>
+
+        <input type="submit" value="Cadastrar" class="btn-primary">
+
+    </form>
+{% endblock %}
